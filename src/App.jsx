@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import DarkMode from "./hooks/DarkMode";
 
 function App() {
   return (
