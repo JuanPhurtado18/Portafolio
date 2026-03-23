@@ -8,55 +8,63 @@ import { PROJECTS } from "./Components/proyects";
 import About from "./Components/About";
 import Skills from "./Components/Skills";
 import Background from "./Components/BackGround";
+import Loader from "./hooks/Loader";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
   return (
     <>
-      <Background />
-      <Navbar />
+      {loading && <Loader onFinish={() => setLoading(false)} />}
 
-      {/* Inicio */}
-      <section id="FirstView">
-        <Home />
-      </section>
+      <div
+        style={{
+          visibility: loading ? "hidden" : "visible",
+          pointerEvents: loading ? "none" : "auto",
+        }}
+      >
+        <Background />
+        <Navbar />
 
-      {/* Sobre mí */}
-      <section id="AboutMe">
-        <About />
-      </section>
+        <section id="FirstView">
+          <Home />
+        </section>
 
-      {/* Skills */}
-      <section id="skills">
-        <Skills />
-      </section>
+        <section id="AboutMe">
+          <About />
+        </section>
 
-      {/* Proyectos */}
-      <section id="proyects" className="px-20 py-20">
-        <h2
-          className="text-center text-4xl text-white uppercase tracking-widest mb-12"
-          style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800 }}
-        >
-          Mis <span style={{ color: "#818cf8" }}>proyectos</span>
-        </h2>
-        <div
-          className="grid grid-cols-3 gap-6"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
-        >
-          {PROJECTS.map((project) => (
-            <Projects
-              key={project.id}
-              img={project.img}
-              title={project.title}
-              description={project.description}
-              techs={project.techs}
-              demoUrl={project.demoUrl}
-              repoUrl={project.repoUrl}
-            />
-          ))}
-        </div>
-      </section>
+        <section id="skills">
+          <Skills />
+        </section>
 
-      <Footer />
+        <section id="proyects" className="px-20 py-20">
+          <h2
+            className="text-center text-4xl text-white uppercase tracking-widest mb-12"
+            style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800 }}
+          >
+            Mis <span style={{ color: "#818cf8" }}>proyectos</span>
+          </h2>
+          <div
+            className="grid grid-cols-3 gap-6"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            {PROJECTS.map((project) => (
+              <Projects
+                key={project.id}
+                img={project.img}
+                title={project.title}
+                description={project.description}
+                techs={project.techs}
+                demoUrl={project.demoUrl}
+                repoUrl={project.repoUrl}
+              />
+            ))}
+          </div>
+        </section>
+
+        <Footer />
+      </div>
     </>
   );
 }
