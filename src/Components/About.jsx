@@ -121,7 +121,7 @@ export default function About() {
       </div>
 
       {/* ── Lado derecho: foto ── */}
-      <div className="flex flex-col items-center gap-4">
+      <div className="  flex flex-col items-center gap-4">
         <div
           className="relative w-56 h-64 rounded-2xl overflow-hidden"
           style={{
