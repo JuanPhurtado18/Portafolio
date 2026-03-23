@@ -5,12 +5,14 @@ import Home from "./layouts/Home";
 import Footer from "./Components/footer";
 import Projects from "./Components/proyects";
 import { PROJECTS } from "./Components/proyects";
+import About from "./Components/About";
 
 function App() {
   return (
     <>
       <Navbar />
       <Home />
+      <About />
       <div
         className="grid grid-cols-3 gap-6 px-10 py-12"
         style={{ fontFamily: "'DM Sans', sans-serif" }}
