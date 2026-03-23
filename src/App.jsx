@@ -6,10 +6,12 @@ import Footer from "./Components/footer";
 import Projects from "./Components/proyects";
 import { PROJECTS } from "./Components/proyects";
 import About from "./Components/About";
+import Background from "./Components/BackGround";
 
 function App() {
   return (
     <>
+      <Background />
       <Navbar />
       <Home />
       <About />
