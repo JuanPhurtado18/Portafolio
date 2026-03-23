@@ -1,6 +1,6 @@
 import Img from "../img/ImagenWelcome.png";
 
-function Welcome() {
+function home() {
   return (
     <div className="flex items-center justify-between h-screen px-15    text-white">
       <div className="text-left">
@@ -17,4 +17,4 @@ function Welcome() {
   );
 }
 
-export default Welcome;
+export default home;
