@@ -16,12 +16,12 @@ function App() {
       <Navbar />
 
       {/* Inicio */}
-      <section id="inicio">
+      <section id="FirstView">
         <Home />
       </section>
 
       {/* Sobre mí */}
-      <section id="sobre-mi">
+      <section id="AboutMe">
         <About />
       </section>
 
@@ -31,7 +31,7 @@ function App() {
       </section>
 
       {/* Proyectos */}
-      <section id="proyectos" className="px-20 py-20">
+      <section id="proyects" className="px-20 py-20">
         <h2
           className="text-center text-4xl text-white uppercase tracking-widest mb-12"
           style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800 }}

@@ -161,6 +161,7 @@ function Projects({ img, title, description, techs, demoUrl, repoUrl }) {
             href={demoUrl}
             className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-sm font-medium text-white transition-all duration-200"
             style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
+            target="_blank"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <circle cx="7" cy="7" r="6" stroke="white" strokeWidth="1.5" />
@@ -177,6 +178,7 @@ function Projects({ img, title, description, techs, demoUrl, repoUrl }) {
           <a
             href={repoUrl}
             className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-sm font-medium text-slate-300 border border-white/10 hover:border-indigo-500/50 hover:text-white transition-all duration-200"
+            target="_blank"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path
