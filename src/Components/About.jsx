@@ -1,5 +1,5 @@
 // About.jsx
-import JuanPhoto from "../img/Project3.png";
+import JuanPhoto from "../img/JuanPhoto.jpg";
 
 export default function About() {
   return (
@@ -42,7 +42,7 @@ export default function About() {
             Tengo dominio en{" "}
             <span className="text-indigo-300 font-medium">JavaScript</span>,{" "}
             <span className="text-indigo-300 font-medium">React.js</span> y{" "}
-            <span className="text-indigo-300 font-medium">APIs REST</span> — y
+            <span className="text-indigo-300 font-medium">APIs REST</span> y
             disfruto trabajar tanto en el frontend como integrando servicios
             backend con{" "}
             <span className="text-indigo-300 font-medium">Node.js</span> y{" "}
@@ -78,12 +78,6 @@ export default function About() {
                 "0 0 0 3px rgba(99,102,241,0.4), 0 20px 40px rgba(99,102,241,0.2)",
             }}
           >
-            <div
-              className="absolute w-56 h-56 rounded-full"
-              style={{
-                background: "linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)",
-              }}
-            />
             <img
               src={JuanPhoto}
               alt="Juan Pablo Hurtado"
