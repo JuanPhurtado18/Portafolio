@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Img from "../img/ImagenWelcome.png";
 
-const ROLES = ["Frontend Developer", "React Developer"];
+const ROLES = ["Fullstack Developer", "React Developer"];
 
 function Home() {
   const [displayed, setDisplayed] = useState("");

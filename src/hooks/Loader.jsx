@@ -115,7 +115,7 @@ export default function Loader({ onFinish }) {
           Juan Pablo <span style={{ color: "#818cf8" }}>Hurtado</span>
         </h1>
         <p className="text-slate-500 text-xs uppercase tracking-widest">
-          Frontend Developer
+          Fullstack Developer
         </p>
       </div>
 

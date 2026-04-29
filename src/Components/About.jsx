@@ -29,25 +29,22 @@ export default function About() {
           <p>
             Soy un{" "}
             <span className="text-indigo-300 font-medium">
-              Desarrollador Frontend
+              Desarrollador Full Stack
             </span>{" "}
             con formación en{" "}
             <span className="text-indigo-300 font-medium">
               Ingeniería Multimedia
             </span>{" "}
-            y experiencia construyendo aplicaciones web modernas. Me apasiona
-            transformar ideas en interfaces funcionales y bien estructuradas.
+            y experiencia construyendo aplicaciones web modernas de extremo a
+            extremo. He desarrollado soluciones completas desde la capa de datos
+            hasta la interfaz, aplicando buenas prácticas de arquitectura y
+            escalabilidad. Me enfoco en crear interfaces dinámicas y bien
+            estructuradas, así como en diseñar APIs y sistemas que permitan una
+            integración eficiente entre frontend y backend. Tengo experiencia
+            trabajando con estado global, consumo de servicios y construcción de
+            aplicaciones con múltiples capas de interacción.
           </p>
-          <p>
-            Tengo dominio en{" "}
-            <span className="text-indigo-300 font-medium">JavaScript</span>,{" "}
-            <span className="text-indigo-300 font-medium">React.js</span> y{" "}
-            <span className="text-indigo-300 font-medium">APIs REST</span> y
-            disfruto trabajar tanto en el frontend como integrando servicios
-            backend con{" "}
-            <span className="text-indigo-300 font-medium">Node.js</span> y{" "}
-            <span className="text-indigo-300 font-medium">Express</span>.
-          </p>
+
           <p>
             Mis áreas de interés incluyen el desarrollo de{" "}
             <span className="text-indigo-300 font-medium">
