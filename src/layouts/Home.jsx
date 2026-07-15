@@ -30,26 +30,33 @@ function Home() {
 
   return (
     <div
-      className="flex items-center justify-between h-screen px-20"
+      className="flex flex-col-reverse sm:flex-row items-center justify-center sm:justify-between h-screen px-6 sm:px-12 lg:px-20 gap-8 sm:gap-0"
       style={{ fontFamily: "'DM Sans', sans-serif" }}
     >
-      {/* Texto izquierdo */}
-      <div className="flex flex-col gap-3">
+      {/* Texto */}
+      <div className="flex flex-col gap-3 text-center sm:text-left">
         <p
-          className="text-indigo-400 text-lg uppercase tracking-widest"
+          className="text-indigo-400 text-base sm:text-lg uppercase tracking-widest"
           style={{ fontFamily: "'Syne', sans-serif" }}
         >
           Hola!
         </p>
         <h1
-          className="text-5xl "
-          style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800,color: "#818cf8", minHeight: "2rem" }}
+          className="text-3xl sm:text-4xl lg:text-5xl"
+          style={{
+            fontFamily: "'Syne', sans-serif",
+            fontWeight: 800,
+            color: "#818cf8",
+          }}
         >
           Soy Juan Pablo Hurtado
         </h1>
 
         {/* Typewriter */}
-        <p className="text-2xl font-medium" style={{ color: "#818cf8", minHeight: "2rem" }}>
+        <p
+          className="text-xl sm:text-2xl font-medium"
+          style={{ color: "#818cf8", minHeight: "2rem" }}
+        >
           {displayed}
           <span
             className="inline-block w-0.5 h-6 ml-1 align-middle bg-indigo-400"
@@ -58,12 +65,11 @@ function Home() {
         </p>
       </div>
 
-      {/* Imagen derecha */}
-      <div>
-        <img className="h-80" src={Img} alt="developer" />
+      {/* Imagen */}
+      <div className="flex justify-center">
+        <img className="h-48 sm:h-64 lg:h-80" src={Img} alt="developer" />
       </div>
 
-      {/* Cursor blink keyframe */}
       <style>{`
         @keyframes blink {
           0%, 100% { opacity: 1; }

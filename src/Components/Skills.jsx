@@ -108,31 +108,31 @@ const SKILLS = [
 export default function Skills() {
   return (
     <section
-      className="px-20 py-20 flex flex-col gap-12"
+      className="px-6 sm:px-12 lg:px-20 py-16 lg:py-20 flex flex-col gap-10 lg:gap-12"
       style={{ fontFamily: "'DM Sans', sans-serif" }}
     >
       <h2
-        className="text-center text-4xl text-white uppercase tracking-widest"
+        className="text-center text-2xl sm:text-3xl lg:text-4xl text-white uppercase tracking-widest"
         style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800 }}
       >
         Mis <span style={{ color: "#818cf8" }}>habilidades</span>
       </h2>
 
       <div
-        className="rounded-2xl p-10"
+        className="rounded-2xl p-6 sm:p-8 lg:p-10"
         style={{
           background: "linear-gradient(145deg, #1a1a2e 0%, #16213e 100%)",
           boxShadow:
             "0 0 0 1px rgba(255,255,255,0.06), 0 20px 40px rgba(0,0,0,0.5)",
         }}
       >
-        <div className="flex flex-wrap gap-3 justify-center">
+        <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
           {SKILLS.map(({ name, Icon, color, iconColor }) => (
             <span
               key={name}
-              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-default hover:scale-105 ${color}`}
+              className={`flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 cursor-default hover:scale-105 ${color}`}
             >
-              <Icon size={18} color={iconColor} />
+              <Icon size={16} color={iconColor} />
               {name}
             </span>
           ))}

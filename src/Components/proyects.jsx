@@ -44,8 +44,8 @@ const PROJECTS = [
     description:
       "Este proyecto simula el flujo básico de un ecommerce, permitiendo a los usuarios registrarse, iniciar sesión y acceder a un listado de productos obtenidos desde una API externa.",
     techs: ["React", "Vite", "Bootstrap", "SweetAlert2", "ReactRouterDOM"],
-    demoUrl: "#",
-    repoUrl: "#",
+    demoUrl: "https://api-ecomerce-iota.vercel.app/",
+    repoUrl: "https://github.com/JuanPhurtado18/ApiEcomerce",
   },
 ];
 
