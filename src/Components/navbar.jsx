@@ -3,12 +3,42 @@ import { useState, useEffect } from "react";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("FirstView");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const sections = ["FirstView", "AboutMe", "skills", "proyects"];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.4 },
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const linkClass = (id) =>
+    `text-sm font-semibold transition duration-300 ${
+      activeSection === id
+        ? "text-indigo-300 border-b border-indigo-400 pb-0.5"
+        : "text-slate-400 hover:text-indigo-300"
+    }`;
 
   return (
     <header
@@ -28,28 +58,40 @@ export default function Navbar() {
         <div className="hidden sm:flex gap-6">
           <a
             href="#FirstView"
-            className="text-sm font-semibold text-slate-400 hover:text-indigo-300 transition duration-300"
+            className={linkClass(
+              "FirstView",
+              " text-sm font-semibold text-slate-400 hover:text-indigo-300 transition duration-300",
+            )}
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
             Inicio
           </a>
           <a
             href="#AboutMe"
-            className="text-sm font-semibold text-slate-400 hover:text-indigo-300 transition duration-300"
+            className={linkClass(
+              "AboutMe",
+              "text-sm font-semibold text-slate-400 hover:text-indigo-300 transition duration-300",
+            )}
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
             Sobre mí
           </a>
           <a
             href="#skills"
-            className="text-sm font-semibold text-slate-400 hover:text-indigo-300 transition duration-300"
+            className={linkClass(
+              "skills",
+              "text-sm font-semibold text-slate-400 hover:text-indigo-300 transition duration-300",
+            )}
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
             Mis Skills
           </a>
           <a
             href="#proyects"
-            className="text-sm font-semibold text-slate-400 hover:text-indigo-300 transition duration-300"
+            className={linkClass(
+              "proyects",
+              "text-sm font-semibold text-slate-400 hover:text-indigo-300 transition duration-300",
+            )}
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
             Mis Proyectos
