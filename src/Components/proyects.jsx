@@ -2,6 +2,9 @@ import { useState } from "react";
 import LinkeInImg from "../img/Project1.png";
 import ProjectImg from "../img/Project2.png";
 import appProject from "../img/Project3.png";
+import Ensam from "../img/Ensam.png";
+import NeuroLearn from "../img/NeuroLearn.png";
+import SkyView from "../img/SkyView.png";
 
 const TECH_STYLES = {
   HTML: "bg-orange-500/20 text-orange-300 border border-orange-500/30",
@@ -14,6 +17,10 @@ const TECH_STYLES = {
   Bootstrap: "bg-violet-600/20 text-violet-300 border border-violet-600/30",
   Vite: "bg-fuchsia-500/20 text-fuchsia-300 border border-fuchsia-500/30",
   ReactRouterDOM: "bg-red-500/20 text-red-300 border border-red-500/30",
+  Unity: "bg-slate-400/10 text-slate-200 border border-slate-400/20",
+  CSharp: "bg-slate-400/20 text-slate-200 border border-slate-400/30",
+  Python: "bg-blue-500/10 text-blue-300 border border-blue-500/20",
+  FastApi: "bg-green-400/20 text-green-300 border border-green-400/30",
 };
 
 const PROJECTS = [
@@ -47,10 +54,56 @@ const PROJECTS = [
     demoUrl: "https://api-ecomerce-iota.vercel.app/",
     repoUrl: "https://github.com/JuanPhurtado18/ApiEcomerce",
   },
+  {
+    id: 4,
+    img: Ensam,
+    title: "Emsam",
+    description:
+      "Videojuego desarrollado en Unity. Proyecto colaborativo que incluye diseño de niveles, programación de mecánicas de juego, sistema de puntuación y efectos visualares.",
+    techs: ["Unity", "C#"],
+    demoUrl: "",
+    repoUrl: "https://github.com/JuanPhurtado18/Ensam",
+    hasModal: true,
+    collaborators: ["Valeria Bowers", "Manuel Cortes", "Natalia Hernandez"],
+    webUrl: "https://web-vd.vercel.app/",
+  },
+  {
+    id: 5,
+    img: SkyView,
+    title: "SkyView",
+    description:
+      "Sistema web basado en Inteligencia Artificial para la segmentación automática del cielo y el cálculo del Sky View Factor (SVF) en entornos urbanos utilizando YOLOv8-Seg.",
+    techs: ["Python", "FastApi"],
+    demoUrl: "",
+    repoUrl: "https://github.com/JuanPhurtado18/SkyView",
+  },
+  {
+    id: 6,
+    img: NeuroLearn,
+    title: "Neurolearn",
+    description:
+      "Aplicación de realidad virtual terapéutica diseñada para ayudar a estudiantes universitarios en el manejo de emociones como estrés, ansiedad y enojo. Incluye múltiples actividades interactivas, entornos inmersivos de relajación y técnicas de mindfulness adaptadas al contexto académico universitario.",
+    techs: ["Unity", "C#"],
+    demoUrl: "",
+    repoUrl: "https://github.com/JuanPhurtado18/NeuroLearn",
+    hasModal: true,
+    collaborators: ["Valeria Bowes","Manuel Cortes", "Dalin Grisales", "Natalia Hernadez", "Camilo Irragorri"],
+  },
 ];
 
-function Projects({ img, title, description, techs, demoUrl, repoUrl }) {
+function Projects({
+  img,
+  title,
+  description,
+  techs,
+  demoUrl,
+  repoUrl,
+  hasModal,
+  collaborators,
+  webUrl,
+}) {
   const [hovered, setHovered] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <div
@@ -89,7 +142,6 @@ function Projects({ img, title, description, techs, demoUrl, repoUrl }) {
                 backgroundSize: "24px 24px",
               }}
             />
-
             <div
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full opacity-40"
               style={{
@@ -100,13 +152,6 @@ function Projects({ img, title, description, techs, demoUrl, repoUrl }) {
             />
           </>
         )}
-
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span
-            className="text-indigo-300/50 text-xs font-medium uppercase tracking-widest"
-            style={{ fontFamily: "'Syne', sans-serif", letterSpacing: "0.2em" }}
-          ></span>
-        </div>
         <div className="absolute top-3 right-3 w-7 h-7 rounded-full bg-indigo-500/30 border border-indigo-400/40 flex items-center justify-center">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path
@@ -120,22 +165,19 @@ function Projects({ img, title, description, techs, demoUrl, repoUrl }) {
         </div>
       </div>
 
-      {/* Cuerpo de la card */}
+      {/* Cuerpo */}
       <div className="px-5 pt-4 pb-5 flex flex-col flex-1">
-        {/* Título */}
         <h2
           className="text-white text-lg mb-1.5"
           style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800 }}
         >
           {title}
         </h2>
-
-        {/* Descripción */}
         <p className="text-slate-400 text-sm leading-relaxed mb-4 flex-1">
           {description}
         </p>
 
-        {/* Tecnologías utilizadas */}
+        {/* Tecnologías */}
         <div className="mb-4">
           <span className="text-xs text-slate-500 uppercase tracking-widest mb-2 block">
             Tecnologías utilizadas
@@ -152,44 +194,126 @@ function Projects({ img, title, description, techs, demoUrl, repoUrl }) {
           </div>
         </div>
 
-        {/* Divisor */}
         <div className="h-px bg-white/5 mb-4" />
 
         {/* Botones */}
         <div className="flex gap-3">
-          <a
-            href={demoUrl}
-            className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-sm font-medium text-white transition-all duration-200"
-            style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
-            target="_blank"
-          >
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <circle cx="7" cy="7" r="6" stroke="white" strokeWidth="1.5" />
-              <path
-                d="M5 7l2 2 2-3"
-                stroke="white"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            Demo
-          </a>
-          <a
-            href={repoUrl}
-            className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-sm font-medium text-slate-300 border border-white/10 hover:border-indigo-500/50 hover:text-white transition-all duration-200"
-            target="_blank"
-          >
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path
-                d="M7 1C3.686 1 1 3.686 1 7c0 2.655 1.722 4.907 4.11 5.702.3.055.41-.13.41-.29v-1.015c-1.67.363-2.02-.806-2.02-.806-.273-.693-.666-.878-.666-.878-.545-.372.04-.365.04-.365.602.043.919.618.919.618.535.917 1.404.652 1.745.498.054-.387.21-.652.38-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.152-.268-.762.058-1.587 0 0 .504-.161 1.65.615A5.75 5.75 0 017 4.862c.51.002 1.023.069 1.502.202 1.145-.776 1.648-.615 1.648-.615.327.825.121 1.435.06 1.587.385.42.617.955.617 1.61 0 2.305-1.403 2.812-2.74 2.96.216.186.408.551.408 1.11v1.647c0 .161.108.348.413.289C11.28 11.905 13 9.654 13 7c0-3.314-2.686-6-6-6z"
-                fill="currentColor"
-              />
-            </svg>
-            Repositorio
-          </a>
+          {hasModal ? (
+            <button
+              onClick={() => setModalOpen(true)}
+              className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-sm font-medium text-white transition-all duration-200"
+              style={{
+                background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+              }}
+            >
+              Detalles
+            </button>
+          ) : demoUrl ? (
+            <a
+              href={demoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-sm font-medium text-white transition-all duration-200"
+              style={{
+                background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+              }}
+            >
+              Demo
+            </a>
+          ) : null}
+
+          {repoUrl && (
+            <a
+              href={repoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-sm font-medium text-slate-300 border border-white/10 hover:border-indigo-500/50 hover:text-white transition-all duration-200"
+            >
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path
+                  d="M7 1C3.686 1 1 3.686 1 7c0 2.655 1.722 4.907 4.11 5.702.3.055.41-.13.41-.29v-1.015c-1.67.363-2.02-.806-2.02-.806-.273-.693-.666-.878-.666-.878-.545-.372.04-.365.04-.365.602.043.919.618.919.618.535.917 1.404.652 1.745.498.054-.387.21-.652.38-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.152-.268-.762.058-1.587 0 0 .504-.161 1.65.615A5.75 5.75 0 017 4.862c.51.002 1.023.069 1.502.202 1.145-.776 1.648-.615 1.648-.615.327.825.121 1.435.06 1.587.385.42.617.955.617 1.61 0 2.305-1.403 2.812-2.74 2.96.216.186.408.551.408 1.11v1.647c0 .161.108.348.413.289C11.28 11.905 13 9.654 13 7c0-3.314-2.686-6-6-6z"
+                  fill="currentColor"
+                />
+              </svg>
+              Repositorio
+            </a>
+          )}
         </div>
       </div>
+
+      {/* Modal */}
+      {modalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{ background: "rgba(0,0,0,0.7)", backdropFilter: "blur(6px)" }}
+          onClick={() => setModalOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-lg rounded-2xl p-8 flex flex-col gap-5"
+            style={{
+              background: "linear-gradient(145deg, #1a1a2e 0%, #16213e 100%)",
+              boxShadow:
+                "0 0 0 1px rgba(99,102,241,0.3), 0 25px 60px rgba(0,0,0,0.6)",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setModalOpen(false)}
+              className="absolute top-4 right-4 text-slate-500 hover:text-white transition-colors"
+            >
+              ✕
+            </button>
+
+            <h3
+              className="text-white text-xl"
+              style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800 }}
+            >
+              {title}
+            </h3>
+
+            <div className="h-px bg-white/5" />
+
+            <div>
+              <span className="text-xs text-slate-500 uppercase tracking-widest mb-2 block">
+                Descripción
+              </span>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                {description}
+              </p>
+            </div>
+
+            <div>
+              <span className="text-xs text-slate-500 uppercase tracking-widest mb-2 block">
+                Colaboradores
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {collaborators?.map((c) => (
+                  <span
+                    key={c}
+                    className="text-xs px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {webUrl && (
+              <a
+                href={webUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-center gap-2 py-2 rounded-lg text-sm font-medium text-white transition-all duration-200"
+                style={{
+                  background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+                }}
+              >
+                Ver proyecto
+              </a>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -7,6 +7,7 @@ import {
   DiMongodb,
   DiGit,
   DiBootstrap,
+  DiPython,
 } from "react-icons/di";
 
 import {
@@ -16,7 +17,11 @@ import {
   SiPostman,
   SiMysql,
   SiGithub,
+  SiFastapi,
+  SiUnity,
 } from "react-icons/si";
+
+
 
 const SKILLS = [
   {
@@ -103,6 +108,30 @@ const SKILLS = [
     color: "bg-orange-600/20 text-orange-300 border border-orange-600/30",
     iconColor: "#fb923c",
   },
+  {
+    name: "Python",
+    Icon: DiPython,
+    color: "bg-blue-500/10 text-blue-300 border border-blue-500/20",
+    iconColor: "#60a5fa",
+  },
+  {
+    name: "Fastapi",
+    Icon: SiFastapi,
+    color: "bg-green-400/20 text-green-300 border border-green-400/30",
+    iconColor: "#4ade80",
+  },
+  {
+    name: "Unity",
+    Icon: SiUnity,
+    color: "bg-slate-400/10 text-slate-200 border border-slate-400/20",
+    iconColor: "#e2e8f0",
+  },
+  {
+    name: "C#",
+    Icon: null,
+    color: "bg-slate-400/10 text-slate-200 border border-slate-400/20",
+    iconColor: "#e2e8f0",
+  },
 ];
 
 export default function Skills() {
@@ -132,7 +161,7 @@ export default function Skills() {
               key={name}
               className={`flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 cursor-default hover:scale-105 ${color}`}
             >
-              <Icon size={16} color={iconColor} />
+              {Icon && <Icon size={16} color={iconColor} />}
               {name}
             </span>
           ))}

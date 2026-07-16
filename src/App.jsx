@@ -61,6 +61,9 @@ function App() {
                 techs={project.techs}
                 demoUrl={project.demoUrl}
                 repoUrl={project.repoUrl}
+                hasModal={project.hasModal}
+                collaborators={project.collaborators}
+                webUrl={project.webUrl}
               />
             ))}
           </div>
