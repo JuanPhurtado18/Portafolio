@@ -64,6 +64,7 @@ function App() {
                 hasModal={project.hasModal}
                 collaborators={project.collaborators}
                 webUrl={project.webUrl}
+                videoUrl={project.videoUrl}
               />
             ))}
           </div>
