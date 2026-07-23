@@ -350,7 +350,7 @@ function Projects({
                   src={videoUrl}
                   className="w-full block"
                   controls
-                  autoPlay
+                  autoPlay={!isTouchDevice()}
                   style={{ maxHeight: "45vh", background: "#000" }}
                 />
               )}
