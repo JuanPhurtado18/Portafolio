@@ -130,6 +130,7 @@ function Projects({
   const [modalOpen, setModalOpen] = useState(false);
   const videoRef = useRef(null);
 
+  const isTouchDevice = () => window.matchMedia("(hover: none)").matches;
   const closeModal = () => setModalOpen(false);
 
   return (
@@ -153,9 +154,11 @@ function Projects({
             background:
               "linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%)",
           }}
-          onMouseEnter={() => videoRef.current?.play()}
+          onMouseEnter={() => {
+            if (!isTouchDevice()) videoRef.current?.play();
+          }}
           onMouseLeave={() => {
-            if (videoRef.current) {
+            if (!isTouchDevice() && videoRef.current) {
               videoRef.current.pause();
               videoRef.current.currentTime = 0;
             }
@@ -166,18 +169,19 @@ function Projects({
               <video
                 ref={videoRef}
                 src={videoUrl}
+                poster={img}
                 className="absolute inset-0 w-full h-full object-cover"
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload="none"
               />
               <div
                 className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300"
                 style={{ background: "rgba(0,0,0,0.3)" }}
                 onClick={(e) => {
                   e.stopPropagation();
-                  setModalOpen(true);
+                  if (!isTouchDevice()) setModalOpen(true);
                 }}
               >
                 <div
