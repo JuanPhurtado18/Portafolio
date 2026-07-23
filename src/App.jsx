@@ -16,7 +16,6 @@ function App() {
   return (
     <>
       {loading && <Loader onFinish={() => setLoading(false)} />}
-
       <div
         style={{
           visibility: loading ? "hidden" : "visible",
@@ -25,19 +24,15 @@ function App() {
       >
         <Background />
         <Navbar />
-
         <section id="FirstView">
           <Home />
         </section>
-
         <section id="AboutMe">
           <About />
         </section>
-
         <section id="skills">
           <Skills />
         </section>
-
         <section
           id="proyects"
           className="px-6 sm:px-12 lg:px-20 py-16 lg:py-20"
@@ -69,11 +64,9 @@ function App() {
             ))}
           </div>
         </section>
-
         <Footer />
       </div>
     </>
   );
 }
-
 export default App;
