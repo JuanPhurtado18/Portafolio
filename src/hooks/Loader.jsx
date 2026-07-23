@@ -5,7 +5,7 @@ export default function Loader({ onFinish }) {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    const duration = 6000;
+    const duration = 3000;
     const interval = 30;
     const steps = duration / interval;
     let current = 0;
