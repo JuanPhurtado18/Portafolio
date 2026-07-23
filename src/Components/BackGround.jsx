@@ -45,8 +45,12 @@ function Background() {
 
       // Orbe superior izquierdo
       const orb1 = ctx.createRadialGradient(
-        canvas.width * 0.15, canvas.height * 0.2, 0,
-        canvas.width * 0.15, canvas.height * 0.2, 350
+        canvas.width * 0.15,
+        canvas.height * 0.2,
+        0,
+        canvas.width * 0.15,
+        canvas.height * 0.2,
+        350,
       );
       orb1.addColorStop(0, "rgba(99,102,241,0.12)");
       orb1.addColorStop(1, "transparent");
@@ -55,8 +59,12 @@ function Background() {
 
       // Orbe inferior derecho
       const orb2 = ctx.createRadialGradient(
-        canvas.width * 0.85, canvas.height * 0.8, 0,
-        canvas.width * 0.85, canvas.height * 0.8, 300
+        canvas.width * 0.85,
+        canvas.height * 0.8,
+        0,
+        canvas.width * 0.85,
+        canvas.height * 0.8,
+        300,
       );
       orb2.addColorStop(0, "rgba(139,92,246,0.10)");
       orb2.addColorStop(1, "transparent");
@@ -128,7 +136,7 @@ function Background() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 -z-10"
-      style={{ display: "block" }}
+      style={{ display: "block", width: "100%", height: "100%" }}
     />
   );
 }
