@@ -135,8 +135,18 @@ function Background() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 -z-10"
-      style={{ display: "block", width: "100%", height: "100%" }}
+      style={{
+        position: "fixed",
+        top: "-50px",
+        left: 0,
+        right: 0,
+        bottom: "-50px",
+        width: "100%",
+        height: "calc(100% + 100px)",
+        zIndex: -10,
+        display: "block",
+        background: "#0d0d14",
+      }}
     />
   );
 }

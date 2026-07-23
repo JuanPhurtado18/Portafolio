@@ -2,6 +2,7 @@ function footer() {
   return (
     <footer
       style={{
+        paddingBottom: "env(safe-area-inset-bottom)",
         borderTop: "1px solid rgba(255,255,255,0.06)",
         fontFamily: "'DM Sans', sans-serif",
       }}
