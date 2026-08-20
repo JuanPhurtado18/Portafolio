@@ -19,9 +19,9 @@ import {
   SiGithub,
   SiFastapi,
   SiUnity,
+  SiSupabase,
 } from "react-icons/si";
-
-
+import { SiReact } from "react-icons/si";
 
 const SKILLS = [
   {
@@ -131,6 +131,26 @@ const SKILLS = [
     Icon: null,
     color: "bg-slate-400/10 text-slate-200 border border-slate-400/20",
     iconColor: "#e2e8f0",
+  },
+
+  {
+    name: "Supabase",
+    Icon: SiSupabase,
+    color: "bg-green-400/20 text-green-300 border border-green-400/30",
+    iconColor: "#34d399",
+  },
+  {
+    name: "Supabase",
+    Icon: SiSupabase,
+    color: "bg-green-400/20 text-green-300 border border-green-400/30",
+    iconColor: "#34d399",
+  },
+
+  {
+    name: "ReactNaitve",
+    Icon: DiReact,
+    color: "bg-cyan-500/30 text-cyan-300 border border-cyan-500/40",
+    iconColor: "#22d3ee",
   },
 ];
 

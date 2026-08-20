@@ -12,6 +12,8 @@ import DashboardVideo from "../video/Gestor de proyectos.mp4";
 import ApiEcomerceVideo from "../video/apiEcomerce.mp4";
 import EnsamVideo from "../video/ENSAM.mp4";
 import NeuroLearnVideo from "../video/NeuroLearn.mp4";
+import SentIAVideo from "../video/Sent-IAVideo.mp4";
+import SentIA from "../img/SENT-IA.png";
 
 const TECH_STYLES = {
   HTML: "bg-orange-500/20 text-orange-300 border border-orange-500/30",
@@ -28,19 +30,21 @@ const TECH_STYLES = {
   CSharp: "bg-slate-400/20 text-slate-200 border border-slate-400/30",
   Python: "bg-blue-500/10 text-blue-300 border border-blue-500/20",
   FastApi: "bg-green-400/20 text-green-300 border border-green-400/30",
+  ReactNative: "bg-cyan-400/30 text-cyan-300 border border-cyan-400/40",
+  Supabase: "bg-green-400/20 text-green-300 border border-green-400/30",
 };
 
 const PROJECTS = [
   {
     id: 1,
-    img: LinkeInImg,
-    videoUrl: LinkeInVideo,
-    title: "LinkedIn UI Clone",
+    img: SentIA,
+    videoUrl: SentIAVideo,
+    title: "Sent-IA",
     description:
-      "Clon de la interfaz visual de LinkedIn, enfocado en la maquetación y replicación de una interfaz real de una red social profesional.",
-    techs: ["HTML", "CSS"],
-    demoUrl: "https://linkend-copy.vercel.app/",
-    repoUrl: "https://github.com/JuanPhurtado18/LinkendCopy",
+      "SENT-IA es una aplicación móvil orientada a instituciones educativas que permite realizar un seguimiento continuo del bienestar emocional de los estudiantes mediante actividades semanales.",
+    techs: ["ReactNative", "Supabase", "Zustand"],
+    demoUrl: "",
+    repoUrl: "https://github.com/JuanPhurtado18/SENT-IA",
     hasModal: true,
   },
   {
