@@ -139,12 +139,6 @@ const SKILLS = [
     color: "bg-green-400/20 text-green-300 border border-green-400/30",
     iconColor: "#34d399",
   },
-  {
-    name: "Supabase",
-    Icon: SiSupabase,
-    color: "bg-green-400/20 text-green-300 border border-green-400/30",
-    iconColor: "#34d399",
-  },
 
   {
     name: "ReactNaitve",
