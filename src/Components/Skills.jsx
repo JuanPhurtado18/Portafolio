@@ -20,6 +20,7 @@ import {
   SiFastapi,
   SiUnity,
   SiSupabase,
+  SiTypescript,
 } from "react-icons/si";
 import { SiReact } from "react-icons/si";
 
@@ -144,6 +145,12 @@ const SKILLS = [
     name: "ReactNaitve",
     Icon: DiReact,
     color: "bg-cyan-500/30 text-cyan-300 border border-cyan-500/40",
+    iconColor: "#22d3ee",
+  },
+  {
+    name: "TypeScript",
+    Icon: SiTypescript,
+    color: "bg-blue-500/40 text-blue-300 border border-blue-500/40",
     iconColor: "#22d3ee",
   },
 ];

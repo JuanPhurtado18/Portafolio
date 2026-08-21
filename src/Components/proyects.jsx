@@ -32,6 +32,7 @@ const TECH_STYLES = {
   FastApi: "bg-green-400/20 text-green-300 border border-green-400/30",
   ReactNative: "bg-cyan-400/30 text-cyan-300 border border-cyan-400/40",
   Supabase: "bg-green-400/20 text-green-300 border border-green-400/30",
+  TypeScript: "bg-blue-500/40 text-blue-300 border border-blue-500/40",
 };
 
 const PROJECTS = [
@@ -42,7 +43,7 @@ const PROJECTS = [
     title: "Sent-IA",
     description:
       "SENT-IA es una aplicación móvil orientada a instituciones educativas que permite realizar un seguimiento continuo del bienestar emocional de los estudiantes mediante actividades semanales.",
-    techs: ["ReactNative", "Supabase", "Zustand"],
+    techs: ["ReactNative", "TypeScript", "Supabase", "Zustand"],
     demoUrl: "",
     repoUrl: "https://github.com/JuanPhurtado18/SENT-IA",
     hasModal: true,
