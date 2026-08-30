@@ -4,7 +4,9 @@ import Navbar from "./Components/navbar";
 import Home from "./layouts/Home";
 import Footer from "./Components/footer";
 import Projects from "./Components/proyects";
+import OtherProjects from "./Components/OtherProyects";
 import { PROJECTS } from "./Components/proyects";
+import { OTHERPROJECTS } from "./Components/OtherProyects";
 import About from "./Components/About";
 import Skills from "./Components/Skills";
 import Background from "./Components/BackGround";
@@ -60,6 +62,39 @@ function App() {
                 collaborators={project.collaborators}
                 webUrl={project.webUrl}
                 videoUrl={project.videoUrl}
+              />
+            ))}
+          </div>
+        </section>
+        <section
+          id="OtherProyects"
+          className="px-6 sm:px-12 lg:px-20 py-16 lg:py-20"
+        >
+          <h2
+            className="text-center text-2xl sm:text-3xl lg:text-4xl text-white uppercase tracking-widest mb-8 lg:mb-12"
+            style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800 }}
+          >
+            Mis{" "}
+            <span style={{ color: "#818cf8" }}>Otros proyectos multimedia</span>
+          </h2>
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            {OTHERPROJECTS.map((projects) => (
+              <OtherProjects
+                key={projects.id}
+                img={projects.img}
+                title={projects.title}
+                description={projects.description}
+                techs={projects.techs}
+                demoUrl={projects.demoUrl}
+                repoUrl={projects.repoUrl}
+                hasModal={projects.hasModal}
+                collaborators={projects.collaborators}
+                webUrl={projects.webUrl}
+                videoUrl={projects.videoUrl}
+                iframeUrl= {projects.iframeUrl}
               />
             ))}
           </div>
